@@ -1,20 +1,13 @@
 const controle = document.querySelectorAll('.controle')
 
-for (let i = 0; i < controle.length; i++) {
-    const element = controle[i];
+for (let element of controle) {
     const controles = element.children
+    const btns = [controles[0], controles[2]]
 
-    const minusbtn = controles[0]
-    const input = controles[1]
-    const plusbtn = controles[2]
-    
-    minusbtn.addEventListener('click', () => {
-        if (Number(input.value) > 0 && Number(input.value) < 11) input.value = Number(input.value) - 1
-        else return
-    })
-    
-    plusbtn.addEventListener('click', () => {
-        if (Number(input.value) >= 0 && Number(input.value) < 10) input.value = Number(input.value) + 1
-        else return
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.innerHTML == '-' && Number(controles[1].value) > 0) controles[1].value = Number(controles[1].value) - 1
+            if (btn.innerHTML == '+' && Number(controles[1].value) < 10) controles[1].value = Number(controles[1].value) + 1
+        })
     })
 }
