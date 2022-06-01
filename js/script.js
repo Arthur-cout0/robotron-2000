@@ -11,3 +11,23 @@ for (let element of controle) {
         })
     })
 }
+
+const robo = document.querySelector('.robo')
+
+const lista_cores_robo = {
+    'azul' : './img/robotron-azul.png',
+    'amarelo' : './img/robotron-amarelo.png',
+    'branco' : './img/robotron-branco.png',
+    'preto' : './img/robotron-preto.png',
+    'vermelho' : './img/robotron-vermelho.png',
+    'rosa' : './img/robotron-rosa.png'
+}
+
+let cor_atual = 1
+
+robo.addEventListener('click', () => {
+    if (cor_atual == Object.keys(lista_cores_robo).length
+    ) cor_atual = 1
+    else cor_atual++
+    robo.src = lista_cores_robo[Object.keys(lista_cores_robo)[cor_atual - 1]]
+})
