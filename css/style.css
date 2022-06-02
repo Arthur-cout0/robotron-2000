@@ -27,11 +27,18 @@ body, input {
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
+    width: 80vw;
+    height: 80vh;
     margin: 10vh 8vw 10vh 12vw;
     display: flex;
     gap: 1vw;
+}
+
+.color-warn{
+    font-size: 2rem;
+    color: var(--main-branco);
+    margin-left: 2.5rem;
+    z-index: 2;
 }
 
 .robotron {
